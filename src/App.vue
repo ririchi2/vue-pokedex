@@ -1,18 +1,25 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div id="nav">
+      <router-link to="/pokemon/1">Pokemon Feo</router-link> |
+      <router-link to="/pokemon/4">Pokemon Bueno</router-link> |
+      <router-link to="/pokemon/7">Pokemon Guapo</router-link>
+    </div>
+    <router-view/>
+
+    <Pokedex></Pokedex>
+    
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import pokedex from './components/pokedex.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    pokedex,
+}
 }
 </script>
 
@@ -23,6 +30,18 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+#nav {
+  padding: 30px;
+}
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+  color: #42b983;
 }
 </style>
